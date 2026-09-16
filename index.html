@@ -768,6 +768,10 @@ footer{ border-top:1px solid var(--line); padding:34px 0; }
 <input type="email" id="lead-email" name="email" required>
 </div>
 <div class="lead-field full">
+<label for="lead-whatsapp">WhatsApp</label>
+<input type="tel" id="lead-whatsapp" name="whatsapp" required>
+</div>
+<div class="lead-field full">
 <label for="lead-empresa">Empresa</label>
 <input type="text" id="lead-empresa" name="empresa" required>
 </div>
@@ -837,7 +841,7 @@ console.log('cta_click', el.dataset.cta);
 // Lead capture form: posts to a Google Apps Script Web App bound to a
 // Google Sheet (see project notes). Replace LEAD_FORM_ENDPOINT once the
 // Apps Script deployment URL is available.
-var LEAD_FORM_ENDPOINT = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
+var LEAD_FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzS60hguLnUboUvOsLzNAOFGLScl5jeBUBsg2PWzIHWgHJzzH-VzxbIsoR662t1HGUp/exec";
 var leadForm = document.getElementById('lead-form');
 if (leadForm) {
 leadForm.addEventListener('submit', function(e){
@@ -851,6 +855,7 @@ status.textContent = 'Enviando...';
 var data = {
 nome: leadForm.nome.value,
 email: leadForm.email.value,
+whatsapp: leadForm.whatsapp.value,
 empresa: leadForm.empresa.value,
 produto_clientes: leadForm.produto_clientes.value,
 fundador_vendas: leadForm.fundador_vendas.value,
